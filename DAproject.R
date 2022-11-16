@@ -38,7 +38,7 @@ colnames(december)
 ## round up to two decimal
 options(digits = 2)
 
-## reading to my PC performance combined the data sets into 3 sets that are q_1,q_2,q_3 
+## regarding to my PC performance combined the data sets into 3 sets that are q_1,q_2,q_3 
 
 ## combining the data sets into one data set 
 q_1 <- rbind(january,february,march,april)
@@ -93,7 +93,7 @@ annual_data <- rbind(q_1,q_2,q_3)
 ## Removing the old data sets 
 remove(q_1,q_2,q_3)
 
-## removing NA 
+## removing NA values
 annual_data <- annual_data %>% 
   na.omit() 
 ## Removing Duplicates 
@@ -103,11 +103,5 @@ annual_data <- annual_data %>%
 ## removing the ride_length less than or equal to zero
 annual_data <- annual_data [!(annual_data$ride_length <= 0),]
 
-## Exporting the data set analysis in Excel & Tableau
+## Exporting the data set for analysis in Excel & Tableau
 write.csv(annual_data, file = "annual_data", row.names = FALSE)
-
-
-
-
-
-
